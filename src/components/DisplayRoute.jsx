@@ -16,7 +16,7 @@ const DisplayRoute = ({ markers, setGraphCoords }) => {
   const [maxSpeed, setMaxSpeed] = useState(80);
   
   const carTypes = [
-    'Car', 'Heavy goods car'
+    'Легковий автомобіль', 'Вантажний автомобіль'
   ];
 
   const carDropdownValueChanged = (newValue) => {
@@ -40,32 +40,32 @@ const DisplayRoute = ({ markers, setGraphCoords }) => {
   return (
     <div className="form">
       <div className="form-fields">
-        <h1>Parameters</h1>
+        <h1>Параметри транспортування</h1>
         <div className="params cargo-select">
-          <b>Cargo type:</b>
+          <b>Тип транспортного засобу:</b>
           <Dropdown className="dropdown" options={carTypes} onChange={carDropdownValueChanged} value={carTypes[0]} placeholder="Select an option" />
         </div>
         <div className="params max-speed">
-          <b>Max speed (km/h):</b>
+          <b>Допустима швидкість (км/год):</b>
           <input type="search" name="speed" id="speed" placeholder=">80" onChange={(e) => {
             setMaxSpeed(e.target.value)
           }} />
         </div>
         <div className="params fragile-cargo">
-          <b>Fragile cargo:</b>
+          <b>Крихкий вантаж:</b>
           <input type="checkbox" name="fragile" id="fragile" onChange={(e) => {
             setFragileCargo(e.target.checked)
           }} />
         </div>
         <div className="submit-instructions">
-          <b>Select route points and submit:</b>
-          <input type="button" value="Submit route" className="button submit-button" onClick={submitButtonOnClick} />
+          <b>Оберіть пункти маршруту та підтвердіть:</b>
+          <input type="button" value="Підтвердити" className="button submit-button" onClick={submitButtonOnClick} />
         </div>
       </div>
       <div className="form-results">
-        <h1>Results</h1>
-        {!!duration && (<span className="line"><b>Time:</b><b>{duration} hrs</b></span>)}
-        {!!distance && (<span className="line"><b>Distance:</b><b>{distance} km</b></span>)}
+        <h1>Результати маршруту</h1>
+        {!!duration && (<span className="line"><b>Орієнтовний час:</b><b>{duration} год</b></span>)}
+        {!!distance && (<span className="line"><b>Відстань:</b><b>{distance} км</b></span>)}
       </div>
     </div>
   )

@@ -16,7 +16,7 @@ function createPayload ({markers, carType, fragileCargo, maxSpeed}) {
   console.log(carType)
   return {
     coordinates: formattedCoordinates,
-    carType: carType === 'Car' ? 'car' : 'heavy',
+    carType: carType === 'Легковий автомобіль' ? 'car' : 'heavy',
     fragileCargo,
     maxSpeed
   }
