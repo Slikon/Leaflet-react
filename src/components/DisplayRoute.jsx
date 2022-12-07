@@ -58,7 +58,7 @@ const DisplayRoute = ({ markers, setGraphCoords }) => {
           }} />
         </div>
         <div className="submit-instructions">
-          <b>Select route points and submit route:</b>
+          <b>Select route points and submit:</b>
           <input type="button" value="Submit route" className="button submit-button" onClick={submitButtonOnClick} />
         </div>
       </div>
