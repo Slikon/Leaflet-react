@@ -8,16 +8,16 @@ import { calculateRoute } from "../clients/orsClient";
 import { createPayload, getResultsFromResponse } from "../utils";
 
 const DisplayRoute = ({ markers, setGraphCoords }) => {
-  const [duration, setDuration] = useState(null);
-  const [distance, setDistance] = useState(null);
-
-  const [carType, setCarType] = useState(null);
-  const [fragileCargo, setFragileCargo] = useState(false);
-  const [maxSpeed, setMaxSpeed] = useState(80);
-  
   const carTypes = [
     'Легковий автомобіль', 'Вантажний автомобіль'
   ];
+
+  const [duration, setDuration] = useState(null);
+  const [distance, setDistance] = useState(null);
+
+  const [carType, setCarType] = useState(carTypes[0]);
+  const [fragileCargo, setFragileCargo] = useState(false);
+  const [maxSpeed, setMaxSpeed] = useState(80);
 
   const carDropdownValueChanged = (newValue) => {
     setCarType(newValue.value)
